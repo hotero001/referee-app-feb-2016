@@ -56,6 +56,7 @@
 		C858101E1C667CE6008DC147 /* SurfJournalModelv4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SurfJournalModelv4.xcdatamodel; sourceTree = "<group>"; };
 		C858101F1C669953008DC147 /* SurfJournalModelv5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SurfJournalModelv5.xcdatamodel; sourceTree = "<group>"; };
 		C85810201C671BD0008DC147 /* SurfJournalModelv6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SurfJournalModelv6.xcdatamodel; sourceTree = "<group>"; };
+		C85810211C6D6464008DC147 /* SurfJournalModelv7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SurfJournalModelv7.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -470,6 +471,7 @@
 		4A21E59B1997F68400FB9BC0 /* SurfJournalModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				C85810211C6D6464008DC147 /* SurfJournalModelv7.xcdatamodel */,
 				C85810201C671BD0008DC147 /* SurfJournalModelv6.xcdatamodel */,
 				C858101F1C669953008DC147 /* SurfJournalModelv5.xcdatamodel */,
 				C858101E1C667CE6008DC147 /* SurfJournalModelv4.xcdatamodel */,
@@ -477,7 +479,7 @@
 				C858101C1C642C40008DC147 /* SurfJournalModelv2.xcdatamodel */,
 				4A21E59C1997F68400FB9BC0 /* SurfJournalModel.xcdatamodel */,
 			);
-			currentVersion = C85810201C671BD0008DC147 /* SurfJournalModelv6.xcdatamodel */;
+			currentVersion = C85810211C6D6464008DC147 /* SurfJournalModelv7.xcdatamodel */;
 			path = SurfJournalModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

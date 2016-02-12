@@ -84,6 +84,15 @@ class JournalEntryViewController: UITableViewController {
     @IBOutlet weak var minutesTimerLabel: UILabel!
     @IBOutlet weak var secondsTimerLabel: UILabel!
     
+    @IBOutlet weak var homeTeamLabel: UITextField!
+    @IBOutlet weak var awayTeamLabel: UITextField!
+    
+    @IBOutlet weak var homeTeamColorLabel: UITextField!
+    @IBOutlet weak var awayTeamColorLabel: UITextField!
+    
+    @IBOutlet weak var divisionLabel: UITextField!
+    
+    
   var journalEntry: JournalEntry! {
     didSet {
       self.configureView()
@@ -204,6 +213,41 @@ class JournalEntryViewController: UITableViewController {
         }
     }
     
+    //home team name
+    if let textField = homeTeamLabel {
+        if let value = journalEntry.homeTeam {
+            textField.text = value
+        }
+    }
+    
+    //away team name
+    if let textField = awayTeamLabel {
+        if let value = journalEntry.awayTeam {
+            textField.text = value
+        }
+    }
+    
+    //home team color
+    if let textField = homeTeamColorLabel {
+        if let value = journalEntry.homeTeamColor {
+            textField.text = value
+        }
+    }
+    
+    //away team color
+    if let textField = awayTeamColorLabel {
+        if let value = journalEntry.awayTeamColor {
+            textField.text = value
+        }
+    }
+    
+    //division
+    if let textField = divisionLabel {
+        if let value = journalEntry.division {
+            textField.text = value
+        }
+    }
+    
     //if let segmentControl = ratingSegmentedControl {
     //  if let rating = journalEntry.rating {
     //    segmentControl.selectedSegmentIndex =
@@ -231,6 +275,12 @@ class JournalEntryViewController: UITableViewController {
       //uncomment below two lines
       entry.awayYellowListing = awayYellowLabel.text
       entry.awayRedListing = awayRedLabel.text
+        
+      entry.homeTeam = homeTeamLabel.text
+      entry.awayTeam = awayTeamLabel.text
+      entry.homeTeamColor = homeTeamColorLabel.text
+      entry.awayTeamColor = awayTeamColorLabel.text
+      entry.division = divisionLabel.text
         
       //entry.rating =
       //  NSNumber(integer:

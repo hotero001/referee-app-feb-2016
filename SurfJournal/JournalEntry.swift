@@ -40,6 +40,14 @@ class JournalEntry: NSManagedObject {
   @NSManaged var awayYellowListing: String?
   @NSManaged var awayRedListing: String?
   
+  @NSManaged var homeTeam:String?
+  @NSManaged var awayTeam:String?
+  
+  @NSManaged var homeTeamColor:String?
+  @NSManaged var awayTeamColor:String?
+  
+  @NSManaged var division:String?
+  
   func stringForDate() -> String {
     
     let dateFormatter = NSDateFormatter()

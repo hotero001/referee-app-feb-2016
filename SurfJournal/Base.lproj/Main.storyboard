@@ -166,7 +166,7 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Surf Journal" id="tQt-TN-PWz">
+                    <navigationItem key="navigationItem" title="Soccer Referee Journal" id="tQt-TN-PWz">
                         <barButtonItem key="leftBarButtonItem" title="Export" id="ZDg-gB-gbr">
                             <connections>
                                 <action selector="exportButtonTapped:" destination="pGg-6v-bdr" id="lAZ-YX-JqZ"/>
@@ -610,10 +610,13 @@
                         <outlet property="awayRedTextField" destination="HB7-CP-uk1" id="in8-Y3-3MS"/>
                         <outlet property="awayScoreLabel" destination="jzb-GN-A1v" id="REy-7B-nRC"/>
                         <outlet property="awayStepper" destination="5hn-pt-3PX" id="1gw-VA-ovl"/>
+                        <outlet property="awayTeamColorLabel" destination="W7k-Zu-Hi2" id="2Cc-XV-ndC"/>
+                        <outlet property="awayTeamLabel" destination="DTF-7S-ByJ" id="FMP-8v-D8R"/>
                         <outlet property="awayYellowLabel" destination="fvy-Ec-jVT" id="Bye-8n-8YV"/>
                         <outlet property="awayYellowTextField" destination="Wea-Mx-rw8" id="r9k-OM-k2a"/>
                         <outlet property="changeScoreButton" destination="dn0-zU-IdY" id="cep-PB-0g8"/>
                         <outlet property="changeTimerButton" destination="L7x-5f-Axz" id="9ho-qe-CGP"/>
+                        <outlet property="divisionLabel" destination="kV3-Sa-5UQ" id="1Ke-0w-tKd"/>
                         <outlet property="doneChangingScoreButton" destination="Fgz-wz-fLc" id="hah-jt-02M"/>
                         <outlet property="doneChangingTimerButton" destination="1CB-Iy-cpp" id="Ohc-8u-PBz"/>
                         <outlet property="heightTextField" destination="TYV-EA-kWd" id="7Qr-3T-J6e"/>
@@ -621,6 +624,8 @@
                         <outlet property="homeRedTextField" destination="nsO-dc-gps" id="1wQ-rA-0C8"/>
                         <outlet property="homeScoreLabel" destination="fgC-Db-p8e" id="0GT-kM-P8g"/>
                         <outlet property="homeStepper" destination="8mu-87-6Cd" id="n7b-rI-ZCP"/>
+                        <outlet property="homeTeamColorLabel" destination="0Xj-yD-GQY" id="O8s-Ns-VDI"/>
+                        <outlet property="homeTeamLabel" destination="dpG-dZ-hAz" id="vso-gm-PDe"/>
                         <outlet property="homeYellowLabel" destination="yiz-i5-l5E" id="Idq-yR-J3T"/>
                         <outlet property="homeYellowTextField" destination="K3P-xk-W0I" id="ChH-Ms-3DL"/>
                         <outlet property="locationTextField" destination="fiB-KQ-MI1" id="sW6-4h-kuY"/>
