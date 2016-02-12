@@ -36,8 +36,6 @@ class JournalEntryViewController: UITableViewController {
   @IBOutlet weak var periodTextField: UITextField!
   @IBOutlet weak var windTextField: UITextField!
   @IBOutlet weak var locationTextField: UITextField!
-  @IBOutlet weak var ratingSegmentedControl:
-    UISegmentedControl!
     
     //score stepper variable naming
     @IBOutlet weak var homeStepper: UIStepper!
@@ -75,6 +73,16 @@ class JournalEntryViewController: UITableViewController {
     @IBOutlet weak var awayYellowTextField: UITextField!
     @IBOutlet weak var awayRedTextField: UITextField!
     
+    //variables declaring change timer and stop changing timer
+    @IBOutlet weak var changeTimerButton: UIButton!
+    @IBOutlet weak var doneChangingTimerButton: UIButton!
+    
+    //variable declaring stepper to change the timer
+    @IBOutlet weak var timerStepper: UIStepper!
+    
+    //variables declaring minutes label for the timer
+    @IBOutlet weak var minutesTimerLabel: UILabel!
+    @IBOutlet weak var secondsTimerLabel: UILabel!
     
   var journalEntry: JournalEntry! {
     didSet {
@@ -84,6 +92,11 @@ class JournalEntryViewController: UITableViewController {
     
   var context: NSManagedObjectContext!
   var delegate:JournalEntryDelegate?
+    
+    //variables for timer
+    var counter:Int?
+    var secondsCounter:Int?
+    var timer = NSTimer()
 
   //variables declaring the arrays for bookings
   //var homeYellows = [String]()
@@ -108,6 +121,14 @@ class JournalEntryViewController: UITableViewController {
     
     //homeYellowLabel.text = "---"
     //homeRedLabel.text = "---"
+    
+    timerStepper.enabled = false
+    timerStepper.wraps = true
+    
+    doneChangingTimerButton.enabled = false
+    doneChangingTimerButton.hidden = true
+    
+    secondsCounter = Int(60)
   }
   
   
@@ -183,12 +204,12 @@ class JournalEntryViewController: UITableViewController {
         }
     }
     
-    if let segmentControl = ratingSegmentedControl {
-      if let rating = journalEntry.rating {
-        segmentControl.selectedSegmentIndex =
-          rating.integerValue - 1
-      }
-    }
+    //if let segmentControl = ratingSegmentedControl {
+    //  if let rating = journalEntry.rating {
+    //    segmentControl.selectedSegmentIndex =
+    //      rating.integerValue - 1
+    //  }
+    //}
     
   }
   
@@ -211,12 +232,11 @@ class JournalEntryViewController: UITableViewController {
       entry.awayYellowListing = awayYellowLabel.text
       entry.awayRedListing = awayRedLabel.text
         
-      entry.rating =
-        NSNumber(integer:
-          ratingSegmentedControl.selectedSegmentIndex + 1)
+      //entry.rating =
+      //  NSNumber(integer:
+      //    ratingSegmentedControl.selectedSegmentIndex + 1)
     }
   }
-  
   
   // MARK: Target Action
   
@@ -271,12 +291,25 @@ class JournalEntryViewController: UITableViewController {
             if homeReds.contains(homeYellowTextField.text!){
             }else{
                 homeReds.append(homeYellowTextField.text!)
-                homeRedLabel.text = "\(homeReds)"
+                //added this below
+                if journalEntry.homeRedListing != nil {
+                    homeRedLabel.text = String(homeReds) + String(journalEntry.homeRedListing!)
+                }else{
+                    homeRedLabel.text = String(homeReds)
+                }
+                //homeRedLabel.text = "\(homeReds)"
             }
         }else{
             self.homeYellows.append(homeYellowTextField.text!)
+            //added if/else statement below
+            if journalEntry.homeYellowListing != nil {
+                homeYellowLabel.text = String(homeYellows) + String(journalEntry.homeYellowListing!)
+            }else{
+                homeYellowLabel.text = String(homeYellows)
+            }
         }
-        homeYellowLabel.text = String(homeYellows) + String(journalEntry.homeYellowListing!)
+        //else, display String(homeYellows) + String(journalEntry.homeYellowListing!)
+        //homeYellowLabel.text = String(homeYellows) + String(journalEntry.homeYellowListing)
     }
     
     //action to submit the player number for a home red booking
@@ -316,6 +349,60 @@ class JournalEntryViewController: UITableViewController {
         }else{
             awayRedLabel.text = String(awayReds)
         }
+    }
+    
+    @IBAction func changeTimerAction(sender: AnyObject) {
+        doneChangingTimerButton.hidden = false
+        doneChangingTimerButton.enabled = true
+        changeTimerButton.hidden = true
+        changeTimerButton.enabled = false
+        
+        timerStepper.enabled = true
+    }
+    
+    @IBAction func doneChangingTimerAction(sender: AnyObject) {
+        changeTimerButton.hidden = false
+        changeTimerButton.enabled = true
+        doneChangingTimerButton.hidden = true
+        doneChangingTimerButton.enabled = false
+        
+        timerStepper.enabled = false
+    }
+    
+    @IBAction func editTimerStepperAction(sender: UIStepper) {
+        minutesTimerLabel.text = Int(sender.value).description
+    }
+    
+    @IBAction func startTimerAction(sender: AnyObject) {
+        counter = Int(minutesTimerLabel.text!)
+        if !timer.valid {
+            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countDown", userInfo: nil, repeats: true)
+        }
+    }
+    
+    @IBAction func stopTimerAction(sender: AnyObject) {
+        timer.invalidate()
+    }
+    
+    @IBAction func resetTimerAction(sender: AnyObject) {
+        timer.invalidate()
+        secondsCounter = Int(60)
+        secondsTimerLabel.text = "\(60)"
+    }
+    
+    func countDown() {
+        secondsCounter = secondsCounter! - 1
+        if (secondsCounter == 0) {
+            secondsCounter = 60
+            counter = counter! - 1
+        }
+        updateText()
+    }
+    
+    func updateText() {
+        let _:Int?
+        minutesTimerLabel.text = String(counter!)
+        secondsTimerLabel.text = String(secondsCounter!)
     }
 }
 
