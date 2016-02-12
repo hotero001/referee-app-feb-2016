@@ -330,13 +330,26 @@ class JournalEntryViewController: UITableViewController {
             if awayReds.contains(awayYellowTextField.text!) {
             }else {
                 awayReds.append(awayYellowTextField.text!)
-                awayRedLabel.text = String(awayReds)
+                //
+                if journalEntry.awayRedListing != nil {
+                    awayRedLabel.text = String(awayReds) + String(journalEntry.awayRedListing!)
+                }else{
+                    awayRedLabel.text = String(awayReds)
+                }
+                //awayRedLabel.text = String(awayReds)
             }
         }else{
             self.awayYellows.append(awayYellowTextField.text!)
+            //
+            if journalEntry.awayYellowListing != nil {
+                awayYellowLabel.text = String(awayYellows) + String(journalEntry.awayYellowListing!)
+            }else{
+                awayYellowLabel.text = String(awayYellows)
+            }
+            //
             //awayYellowLabel.text = "\(awayYellows)"
         }
-        awayYellowLabel.text = String(awayYellows) + String(journalEntry.awayYellowListing!)
+        //awayYellowLabel.text = String(awayYellows) + String(journalEntry.awayYellowListing!)
     }
   
     @IBAction func submitAwayRedAction(sender: AnyObject) {
