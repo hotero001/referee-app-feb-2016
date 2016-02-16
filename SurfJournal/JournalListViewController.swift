@@ -111,7 +111,17 @@ class JournalListViewController:
       tableView.dequeueReusableCellWithIdentifier("Cell",
         forIndexPath: indexPath) as! SurfEntryTableViewCell
 
-      configureCell(cell, indexPath: indexPath)
+      //configureCell(cell, indexPath: indexPath)
+        
+       //cell.dateLabel.text = surfJournalEntry.gameDate
+      
+      let surfJournalEntry = fetchedResultController.objectAtIndexPath(indexPath) as! JournalEntry
+      
+      cell.dateLabel.text = surfJournalEntry.gameDate
+      cell.homeTeamLabel.text = surfJournalEntry.homeTeam
+      cell.awayTeamLabel.text = surfJournalEntry.awayTeam
+      cell.gameTimeLabel.text = surfJournalEntry.location
+      
 
     return cell
   }

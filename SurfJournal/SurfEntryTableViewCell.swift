@@ -36,4 +36,7 @@ class SurfEntryTableViewCell: UITableViewCell {
   @IBOutlet weak var starFourFilledImageView: UIImageView!
   @IBOutlet weak var starFiveFilledImageView: UIImageView!
 
+  @IBOutlet weak var gameTimeLabel: UILabel!
+  @IBOutlet weak var homeTeamLabel: UILabel!
+  @IBOutlet weak var awayTeamLabel: UILabel!
 }

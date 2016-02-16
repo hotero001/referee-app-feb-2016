@@ -48,6 +48,8 @@ class JournalEntry: NSManagedObject {
   
   @NSManaged var division:String?
   
+  @NSManaged var gameDate:String?
+  
   func stringForDate() -> String {
     
     let dateFormatter = NSDateFormatter()

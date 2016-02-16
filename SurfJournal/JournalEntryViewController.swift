@@ -27,7 +27,6 @@ protocol JournalEntryDelegate {
   
   func didFinishViewController(
     viewController:JournalEntryViewController, didSave:Bool)
-  
 }
 
 class JournalEntryViewController: UITableViewController {
@@ -91,6 +90,9 @@ class JournalEntryViewController: UITableViewController {
     @IBOutlet weak var awayTeamColorLabel: UITextField!
     
     @IBOutlet weak var divisionLabel: UITextField!
+    
+    //label for the date of the match
+    @IBOutlet weak var dateLabel: UITextField!
     
     
   var journalEntry: JournalEntry! {
@@ -248,6 +250,13 @@ class JournalEntryViewController: UITableViewController {
         }
     }
     
+    //date of match
+    if let textField = dateLabel {
+        if let value = journalEntry.gameDate {
+            textField.text = value
+        }
+    }
+    
     //if let segmentControl = ratingSegmentedControl {
     //  if let rating = journalEntry.rating {
     //    segmentControl.selectedSegmentIndex =
@@ -272,7 +281,6 @@ class JournalEntryViewController: UITableViewController {
       entry.homeYellowListing = homeYellowLabel.text
       entry.homeRedListing = homeRedLabel.text!
         
-      //uncomment below two lines
       entry.awayYellowListing = awayYellowLabel.text
       entry.awayRedListing = awayRedLabel.text
         
@@ -281,6 +289,8 @@ class JournalEntryViewController: UITableViewController {
       entry.homeTeamColor = homeTeamColorLabel.text
       entry.awayTeamColor = awayTeamColorLabel.text
       entry.division = divisionLabel.text
+        
+      entry.gameDate = dateLabel.text
         
       //entry.rating =
       //  NSNumber(integer:
