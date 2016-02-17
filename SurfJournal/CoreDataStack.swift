@@ -66,32 +66,32 @@ class CoreDataStack {
     if didCopyDatabase {
   
       // 4
-      let seededSHMURL = bundle
-        .URLForResource(self.seedName, withExtension: "sqlite-shm")!
-      let shmURL = self.applicationDocumentsDirectory
-        .URLByAppendingPathComponent(self.seedName + ".sqlite-shm")
-      do {
-        try NSFileManager.defaultManager()
-          .copyItemAtURL(seededSHMURL, toURL: shmURL)
-      } catch {
-        let nserror = error as NSError
-        print("Error: \(nserror.localizedDescription)")
-        abort()
-      }
+      //let seededSHMURL = bundle
+      //  .URLForResource(self.seedName, withExtension: "sqlite-shm")!
+      //let shmURL = self.applicationDocumentsDirectory
+      //  .URLByAppendingPathComponent(self.seedName + ".sqlite-shm")
+      //do {
+      //  try NSFileManager.defaultManager()
+      //    .copyItemAtURL(seededSHMURL, toURL: shmURL)
+      //} catch {
+      //  let nserror = error as NSError
+      //  print("Error: \(nserror.localizedDescription)")
+      //  abort()
+      //}
 
       // 5
-      let seededWALURL = bundle
-        .URLForResource(self.seedName, withExtension: "sqlite-wal")!
-      let walURL = self.applicationDocumentsDirectory
-        .URLByAppendingPathComponent(self.seedName + ".sqlite-wal")
-      do {
-        try NSFileManager.defaultManager()
-          .copyItemAtURL(seededWALURL, toURL: walURL)
-      } catch {
-        let nserror = error as NSError
-        print("Error: \(nserror.localizedDescription)")
-        abort()
-      }
+      //let seededWALURL = bundle
+      //  .URLForResource(self.seedName, withExtension: "sqlite-wal")!
+      //let walURL = self.applicationDocumentsDirectory
+      //  .URLByAppendingPathComponent(self.seedName + ".sqlite-wal")
+      //do {
+      //  try NSFileManager.defaultManager()
+      //    .copyItemAtURL(seededWALURL, toURL: walURL)
+      //} catch {
+      //  let nserror = error as NSError
+      //  print("Error: \(nserror.localizedDescription)")
+      //  abort()
+      //}
       
       print("Seeded Core Data")
     }

@@ -73,7 +73,7 @@ class JournalListViewController:
       
     let sortDescriptor =
       NSSortDescriptor(key: "date", ascending: false)
-      
+    
     fetchRequest.sortDescriptors = [sortDescriptor]
       
     return fetchRequest
@@ -122,7 +122,6 @@ class JournalListViewController:
       cell.awayTeamLabel.text = surfJournalEntry.awayTeam
       cell.gameTimeLabel.text = surfJournalEntry.location
       
-
     return cell
   }
   
@@ -377,6 +376,5 @@ class JournalListViewController:
       self.navigationItem.leftBarButtonItem =
         self.exportBarButtonItem()
     }
-
   }
 }
