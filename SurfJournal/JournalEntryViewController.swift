@@ -147,7 +147,8 @@ class JournalEntryViewController: UITableViewController {
   
   func configureView() {
     
-    title = journalEntry.stringForDate()
+    //title = journalEntry.stringForDate()
+    title = "Game Summary"
     
     if let textField = heightTextField {
       if let value = journalEntry.height {
