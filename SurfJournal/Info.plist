@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>soccerrefapp</string>
+	<string>com.larsenmcdermott.soccerrefapp</string>
 	<key>CFBundleDisplayName</key>
 	<string>SoccerRefApp</string>
 	<key>CFBundleInfoDictionaryVersion</key>

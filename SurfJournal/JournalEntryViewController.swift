@@ -22,6 +22,7 @@
 
 import UIKit
 import CoreData
+import iAd
 
 protocol JournalEntryDelegate {
   
@@ -140,6 +141,8 @@ class JournalEntryViewController: UITableViewController {
     doneChangingTimerButton.hidden = true
     
     secondsCounter = Int(60)
+    
+    canDisplayBannerAds = true
   }
   
   

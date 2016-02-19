@@ -11,6 +11,7 @@
 
 import UIKit
 import CoreData
+import iAd
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.topViewController
           as! JournalListViewController
     listViewController.coreDataStack = coreDataStack
+      
+    UIViewController.prepareInterstitialAds()
 
     return true
   }
