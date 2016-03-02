@@ -20,6 +20,8 @@
 		4AD2131619B257ED000CD6AB /* SurfJournalDatabase.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 4AD2131319B253E0000CD6AB /* SurfJournalDatabase.sqlite-wal */; };
 		4ADEF5FE19AA73900005051C /* SurfEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADEF5FD19AA73900005051C /* SurfEntryTableViewCell.swift */; };
 		4ADEF60319AA78430005051C /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADEF60219AA78420005051C /* JournalEntry.swift */; };
+		C820796C1C86EBA700CADD30 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C820796B1C86EBA700CADD30 /* GoogleMobileAds.framework */; };
+		C820796E1C86EC0200CADD30 /* libAdapterIAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C820796D1C86EC0200CADD30 /* libAdapterIAd.a */; };
 		C85810241C769D5E008DC147 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85810231C769D5E008DC147 /* iAd.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,8 @@
 		4ADEF5FD19AA73900005051C /* SurfEntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurfEntryTableViewCell.swift; sourceTree = "<group>"; };
 		4ADEF5FF19AA77FE0005051C /* SurfJournal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SurfJournal-Bridging-Header.h"; sourceTree = "<group>"; };
 		4ADEF60219AA78420005051C /* JournalEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; tabWidth = 2; };
+		C820796B1C86EBA700CADD30 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		C820796D1C86EC0200CADD30 /* libAdapterIAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdapterIAd.a; sourceTree = "<group>"; };
 		C858101C1C642C40008DC147 /* SurfJournalModelv2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SurfJournalModelv2.xcdatamodel; sourceTree = "<group>"; };
 		C858101D1C643187008DC147 /* SurfJournalModelv3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SurfJournalModelv3.xcdatamodel; sourceTree = "<group>"; };
 		C858101E1C667CE6008DC147 /* SurfJournalModelv4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SurfJournalModelv4.xcdatamodel; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C820796C1C86EBA700CADD30 /* GoogleMobileAds.framework in Frameworks */,
+				C820796E1C86EC0200CADD30 /* libAdapterIAd.a in Frameworks */,
 				C85810241C769D5E008DC147 /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				4A42A8721997F44300398605 /* Main.storyboard */,
+				C820796D1C86EC0200CADD30 /* libAdapterIAd.a */,
+				C820796B1C86EBA700CADD30 /* GoogleMobileAds.framework */,
 				4A42A86C1997F44300398605 /* AppDelegate.swift */,
 				4A32281419AA98E400355616 /* JournalListViewController.swift */,
 				4A32281219AA98A800355616 /* JournalEntryViewController.swift */,
@@ -382,8 +390,16 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SurfJournal",
+				);
 				INFOPLIST_FILE = SurfJournal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SurfJournal",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.razeware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SurfJournal/SurfJournal-Bridging-Header.h";
@@ -398,8 +414,16 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SurfJournal",
+				);
 				INFOPLIST_FILE = SurfJournal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SurfJournal",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.razeware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SurfJournal/SurfJournal-Bridging-Header.h";
