@@ -142,7 +142,7 @@ class JournalEntryViewController: UITableViewController {
     
     secondsCounter = Int(60)
     
-    //canDisplayBannerAds = true
+    canDisplayBannerAds = true
   }
   
   

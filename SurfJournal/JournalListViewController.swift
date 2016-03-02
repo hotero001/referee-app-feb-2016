@@ -22,6 +22,7 @@
 
 import UIKit
 import CoreData
+import iAd
 
 class JournalListViewController:
   UITableViewController, NSFetchedResultsControllerDelegate,
