@@ -3,6 +3,7 @@
 import UIKit
 import CoreData
 import iAd
+import GoogleMobileAds
 
 protocol JournalEntryDelegate {
   
@@ -11,6 +12,11 @@ protocol JournalEntryDelegate {
 }
 
 class JournalEntryViewController: UITableViewController {
+  
+  //single line of code below is for the google admob advertisement
+  @IBOutlet weak var bannerView: GADBannerView!
+  //CTR dragged from constraints of banner view
+  @IBOutlet weak var bannerViewBottomConstraint: NSLayoutConstraint!
     
   @IBOutlet weak var heightTextField: UITextField!
   @IBOutlet weak var periodTextField: UITextField!
@@ -122,7 +128,16 @@ class JournalEntryViewController: UITableViewController {
     
     secondsCounter = Int(60)
     
-    canDisplayBannerAds = true
+    //canDisplayBannerAds = true
+    
+    bannerView.adUnitID = "ca-app-pub-8881402128751228/4481101191"
+    bannerView.delegate = self
+    bannerView.rootViewController = self
+    
+    let request = GADRequest()
+    request.testDevices = [kGADSimulatorID]
+    
+    bannerView.loadRequest(request)
   }
   
   
@@ -461,6 +476,26 @@ class JournalEntryViewController: UITableViewController {
         minutesTimerLabel.text = String(counter!)
         secondsTimerLabel.text = String(secondsCounter!)
     }
+}
+
+extension JournalEntryViewController: GADBannerViewDelegate {
+  func adView(bannerView:GADBannerView!,didFailToReceiveAdWithError error: GADRequestError!){
+    if bannerViewBottomConstraint.constant == 0 {
+      UIView.animateWithDuration(0.25, animations: {
+        self.bannerViewBottomConstraint.constant = -CGRectGetHeight(self.bannerView.bounds)
+        self.view.layoutIfNeeded()
+      })
+    }
+  }
+
+  func adViewDidReceiveAd(bannerView: GADBannerView!) {
+    if bannerViewBottomConstraint.constant != 0 {
+      UIView.animateWithDuration(0.25, animations: {
+        self.bannerViewBottomConstraint.constant = 0
+        self.view.layoutIfNeeded()
+      })
+    }
+  }
 }
 
 

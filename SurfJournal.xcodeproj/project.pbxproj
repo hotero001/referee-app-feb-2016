@@ -90,7 +90,6 @@
 		4A42A85E1997F44300398605 = {
 			isa = PBXGroup;
 			children = (
-				C85810231C769D5E008DC147 /* iAd.framework */,
 				4A42A8691997F44300398605 /* SurfJournal */,
 				4A42A87E1997F44400398605 /* SurfJournalTests */,
 				4A42A8681997F44300398605 /* Products */,
@@ -110,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				4A42A8721997F44300398605 /* Main.storyboard */,
+				C85810231C769D5E008DC147 /* iAd.framework */,
 				C820796D1C86EC0200CADD30 /* libAdapterIAd.a */,
 				C820796B1C86EBA700CADD30 /* GoogleMobileAds.framework */,
 				4A42A86C1997F44300398605 /* AppDelegate.swift */,

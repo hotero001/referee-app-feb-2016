@@ -126,7 +126,7 @@
             <objects>
                 <tableViewController id="ECS-Eq-hdI" userLabel="Journal Entry" customClass="JournalEntryViewController" customModule="SurfJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Bvw-Jt-0SE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -282,11 +282,11 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="616" id="lCD-yL-gdE">
-                                        <rect key="frame" x="0.0" y="279" width="320" height="616"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="717" id="lCD-yL-gdE">
+                                        <rect key="frame" x="0.0" y="279" width="320" height="717"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lCD-yL-gdE" id="02a-9S-iX8">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="616"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="lCD-yL-gdE" id="02a-9S-iX8">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="717"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dn0-zU-IdY">
@@ -523,7 +523,24 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Tg-fM-MTB" customClass="GADBannerView">
+                                                    <rect key="frame" x="0.0" y="717" width="0.0" height="50"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="140" id="1Bq-Px-wit"/>
+                                                        <constraint firstAttribute="height" constant="50" id="W4A-aO-hIo"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="bwf-pl-2gC"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6Tg-fM-MTB" firstAttribute="leading" secondItem="02a-9S-iX8" secondAttribute="leading" id="67x-nE-26L"/>
+                                                <constraint firstAttribute="bottom" secondItem="6Tg-fM-MTB" secondAttribute="bottom" constant="-50" id="7XC-gU-kKd"/>
+                                                <constraint firstItem="6Tg-fM-MTB" firstAttribute="leading" secondItem="02a-9S-iX8" secondAttribute="leadingMargin" id="AZt-t6-aV6"/>
+                                                <constraint firstAttribute="trailing" secondItem="6Tg-fM-MTB" secondAttribute="trailing" id="kQJ-69-Qzi"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="6Tg-fM-MTB" secondAttribute="trailing" constant="95" id="rOT-xA-KvJ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="6Tg-fM-MTB" secondAttribute="bottom" constant="10" id="v8N-Et-FWt"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -548,7 +565,7 @@
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="900"/>
+                    <size key="freeformSize" width="320" height="1000"/>
                     <connections>
                         <outlet property="awayRedLabel" destination="Lli-oq-0Tt" id="3a2-JZ-8Dc"/>
                         <outlet property="awayRedTextField" destination="HB7-CP-uk1" id="in8-Y3-3MS"/>
@@ -558,6 +575,8 @@
                         <outlet property="awayTeamLabel" destination="DTF-7S-ByJ" id="FMP-8v-D8R"/>
                         <outlet property="awayYellowLabel" destination="fvy-Ec-jVT" id="Bye-8n-8YV"/>
                         <outlet property="awayYellowTextField" destination="Wea-Mx-rw8" id="r9k-OM-k2a"/>
+                        <outlet property="bannerView" destination="6Tg-fM-MTB" id="wel-CD-mJL"/>
+                        <outlet property="bannerViewBottomConstraint" destination="7XC-gU-kKd" id="8Q5-6Z-WZ0"/>
                         <outlet property="changeScoreButton" destination="dn0-zU-IdY" id="cep-PB-0g8"/>
                         <outlet property="changeTimerButton" destination="L7x-5f-Axz" id="9ho-qe-CGP"/>
                         <outlet property="dateLabel" destination="xsp-fN-1N8" id="eSV-pe-f7W"/>
